@@ -7,7 +7,7 @@ function descriptor()
 end
 
 function activate()
-  started = true
+  started = false
 end
 
 function deactivate()
@@ -25,7 +25,7 @@ end
 
 function show_ui()
   d = vlc.dialog("would you like to save this spot")
-  if started then
+  if not started then
     d:set_title("Start?")
     d:add_button("Start", log)
     d:add_button("Do Nothing", hide_ui)
@@ -34,6 +34,7 @@ function show_ui()
     d:set_title("Stop?")
     d:add_button("Stop", log)
     d:add_button("Do Nothing", hide_ui)
+    w1 = d:add_text_input( text )
     d:show()
   end
 end
@@ -41,6 +42,8 @@ end
 function log()
   d:delete();
   if started then
+    input = w1:get_text()
+    vlc.msg.dbg("Time: " ..  input)
     started = false
   else
     started = true
