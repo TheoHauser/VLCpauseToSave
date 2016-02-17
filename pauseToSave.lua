@@ -1,7 +1,7 @@
 
 function descriptor()
   return {
-    title = "VLC Dummy Extension",
+    title = "Pause To Save",
     capabilities = { "playing-listener" }
   }
 end
