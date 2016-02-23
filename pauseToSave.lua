@@ -1,7 +1,9 @@
 
 function descriptor()
   return {
-    title = "Pause To Save",
+    title = "Pause to Save",
+    version = "0.1" ;
+    author = "Theo Hauser, Jimmy Klein " ;
     capabilities = { "playing-listener" }
   }
 end
