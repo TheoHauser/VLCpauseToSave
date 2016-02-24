@@ -11,12 +11,16 @@ end
 function activate()
   started = false
   input = ""
+  item = vlc.input.item()
+  name = item:name()
+  vlc.msg.dbg("name =".. name)
 end
 
 function deactivate()
 end
 
 function meta_changed()
+
 end
 
 function playing_changed()
