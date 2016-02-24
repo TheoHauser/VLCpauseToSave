@@ -70,3 +70,7 @@ end
 function save_file()
   
 end
+
+function get_time()
+  
+end
