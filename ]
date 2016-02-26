@@ -11,18 +11,18 @@ end
 function activate()
   started = false
   input = ""
-  stringTime = ""
+  timeString = ""
   item = vlc.input.item()
   name = item:name()
-  vlc.msg.dbg("name =".. name)
   get_time()
+  vlc.msg.dbg("name =".. name)
 end
 
 function deactivate()
 end
 
 function meta_changed()
-
+  get_time()
 end
 
 function playing_changed()
@@ -78,12 +78,7 @@ function save_file()
 end
 
 function get_time()
-  vid = vlc.input.item()
+  vid = input.item()
   name = vid:name()
-
-  stringTime = name:sub(14, 15)
-  vlc.msg.dbg(stringTime)
-
-  stringTime = stringTime .. ":"
-  vlc.msg.dbg(stringTime)
+    
 end
