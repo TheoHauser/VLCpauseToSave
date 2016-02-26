@@ -13,10 +13,11 @@ function activate()
   input = ""
   item = vlc.input.item()
   name = item:name()
-  vlc.msg.dbg("name =".. name)
+    vlc.msg.dbg("name =".. name)
 end
 
 function deactivate()
+  
 end
 
 function meta_changed()
@@ -63,12 +64,19 @@ end
 
 function getText()
   input = w:get_text(text)
-  vlc.msg.dbg("Time: " ..  input)
+  --vlc.msg.dbg("Time: " ..  input)
+  write_to_file()
   d:delete()
 end
 
 function hide_ui()
   d:delete()
+end
+
+function write_to_file()
+  file = io.open("/home/jimmy/test.txt","a+")
+  file:write(input .. "\n")
+  file:close()
 end
 
 function save_file()
