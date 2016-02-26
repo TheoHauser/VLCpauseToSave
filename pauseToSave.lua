@@ -76,5 +76,7 @@ function save_file()
 end
 
 function get_time()
-  
+  vid = input.item()
+  name = vid:name()
+  vlc.msg.dbg(name)  
 end
