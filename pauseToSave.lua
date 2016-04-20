@@ -101,7 +101,7 @@ function create_file()
   vlc.msg.dbg("in createFile")
   fileCreated = true
   get_time()
-  file = io.open("/home/hauser2016/Documents/VLCoutput/" .. os.date("%m-%d-%Y", time) .. ".txt","a+")
+  file = io.open("C:\\Users\\Theo\\Documents\\VLClua\\Test.txt", "a+") --.. os.date("%m-%d-%Y", time) .. ".txt","a+")
   file:write("Annotated on: " .. os.date() .. "\n------------------------------------------------\n\n")
 end
 
